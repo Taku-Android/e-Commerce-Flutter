@@ -36,11 +36,13 @@ class _LoginScreenState extends BaseState<LoginScreen , LoginViewModel> implemen
   @override
   void initState() {
     super.initState();
+    viewModel.appConfigProvider = Provider.of<AppConfigProvider>(context
+        , listen: false);
+
   }
 
   @override
   Widget build(BuildContext context) {
-    viewModel.appConfigProvider = Provider.of<AppConfigProvider>(context);
 
     return ChangeNotifierProvider(
       create: (_) => viewModel,
